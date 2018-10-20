@@ -64,7 +64,7 @@
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
+  background-color: #66e717;
   font-size: 22px;
   color: white;
 }
@@ -204,11 +204,11 @@ box-shadow: 28px -15px 76px 12px rgba(0,0,0,0.75);
     animation:blinkingText 0.8s infinite;
 }
 @keyframes blinkingText{
-    0%{     color: rgba(82,255,116,1);  }
+    30%{     color: rgba(82,255,116,80);  }
     49%{    color: transparent; }
     50%{    color: transparent; }
     99%{    color:transparent;  }
-    100%{   color: rgba(250,167,107,1);     }
+    100%{   color: rgba(250,167,107,80);     }
 }
 .footer {
       position: fixed;

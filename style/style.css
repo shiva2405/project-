@@ -1,6 +1,11 @@
-body {margin:0;font-family:Arial}
+.hero-banner  {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 
+}
 .topnav {
+  margin: 0px;
   overflow: hidden;
   background-color: #333;
 }
@@ -13,8 +18,8 @@ body {margin:0;font-family:Arial}
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-}
 
+}
 .active {
   background-color: #4CAF50;
   color: white;
@@ -60,11 +65,13 @@ body {margin:0;font-family:Arial}
 
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: #555;
+  font-size: 22px;
   color: white;
 }
 
 .dropdown-content a:hover {
     background-color: #ddd;
+    font-size: 22px;
     color: black;
 }
 
@@ -153,13 +160,96 @@ div.recent {
     height: 110px;
     overflow: scroll;
 }
-#background001 {
-border: 20px solid black ;
-background-color: blue;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#background001 ,#background003{
+border: 10px solid black ;
+background-color: rgba(0,0,0,0.5);
 text-align: center;
 font-size: 125%;
 color: yellow;
-height: auto;
-width: 30%
+height: 300px;
+width: 300px;
+margin: 200px 20px 10px;
+border-radius: 66px 64px 0px 20px;
+-moz-border-radius: 66px 64px 0px 20px;
+-webkit-border-radius: 66px 64px 0px 20px;
+border: 8px double #1a071a;
+-webkit-box-shadow: 13px -12px 55px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 13px -12px 55px 0px rgba(0,0,0,0.75);
+box-shadow: 13px -12px 55px 0px rgba(0,0,0,0.75);
+}
+#background002 {
+border: 10px solid black ;
+background-color: rgba(255,255,255,1);
+text-align: center;
+font-size: 125%;
+color: yellow;
+height: 350px;
+width: 700px;
+margin: 120px 10px;
+-webkit-box-shadow: 28px -15px 76px 12px rgba(0,0,0,0.75);
+-moz-box-shadow: 28px -15px 76px 12px rgba(0,0,0,0.75);
+box-shadow: 28px -15px 76px 12px rgba(0,0,0,0.75);
+}
+#scroller1 {
+  text-decoration-color: red;
+  font-size: 50px;
+  color: red;
 
+}
+.blinking{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: rgba(82,255,116,1);  }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: rgba(250,167,107,1);     }
+}
+.footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+  }
+  .content{
+    font-size: 20px;
+    color: black;
+
+  }
+  #mainline {
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+  }
+
+.simple-subscription-form {
+  background: #0c3e5f;
+  color: #fefefe;
+  padding: 2rem;
+  border-radius: 0;
+  font-size: 30px;
+
+}
+
+.simple-subscription-form .button {
+  margin-bottom: 40px;
+  border-radius: 0 0 0 0;
+}
+.input-group-field{
+  height: 400%;
+  width: 80%;
+}
+.subscribe{
+  font-size: 35px;
+  font-weight: bolder;
+  color: rgba(255,130,41,1);
 }

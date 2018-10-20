@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang=''>
+<html lang='en'>
 <head>
    <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
    <link rel="stylesheet" href="style/style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -12,7 +13,10 @@
 
 </head>
 <body>
+  <header class="hero-banner" role="banner">
+       <img src="images/banner.jpg" alt="Banner Image"height="10%" width="100%">
 
+   </header>
   <div class="topnav" id="myTopnav">
     <a href="index.html" class="active">Home</a>
     <a href="blog.html">Blog</a>
@@ -47,15 +51,77 @@ function myFunction() {
     }
 }
 </script>
+<marquee id="scroller1"behavior="scroll" direction="left"scrollamount="8">
+  Welcome to <span class="blinking">This awesome </span> website!
+</marquee>
 
-<marquee id="background001" behavior="scroll" direction="up"; scrollamount="2">
-Text 01<br /><br />
+<div class="container">
+<marquee id="background001" behavior="scroll" direction="up"; scrollamount="9">
+<span class="blinking">Recent</span><br /><br />
 Text 02<br /><br />
 Text 03<br /><br />
 Text 04<br /><br />
 Text 05<br /><br />
 </marquee>
+<marquee id="background002" behavior="alternate" direction="left"; scrollamount="20">
+<img src="images/image1.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image2.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image4.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image3.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image5.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image6.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image7.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image8.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image9.jpg"alt="slider"height="350px" width="700px">
+<img src="images/image11.jpg"alt="slider"height="350px" width="700px">
+</marquee>
+<marquee id="background003" behavior="scroll" direction="up"; scrollamount="9">
+<span class="blinking">Notification</span><br /><br />
+Text 02<br /><br />
+Text 03<br /><br />
+Text 04<br /><br />
+Text 05<br /><br />
+</marquee>
+</div>
 
+<div>
+  <p class="content"> <section id="mainline" font-src="font/Aisling-Regular.woff">What is Lorem Ipsum?</section>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+<section id="mainline">Why do we use it?</section>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+<section id="mainline">Where does it come from?</section>
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+<section id="mainline">Where can I get some?</section>
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+</p>
+</div>
+<section>
+  <div class="simple-subscription-form">
+    <form>
+      <span class="subscribe">Subscribe</span>
+      <p>Receive updates and latest news direct from our team. Simply enter your email below :</p>
+      <div class="input-group">
+        <span class="input-group-label">
+          <i class="fa fa-envelope"></i>
+        </span>
+        <input class="input-group-field" type="email" placeholder="Email"required>
+        <button class="button">Sign up now</button>
+    </form>
+  </div>
+
+
+</section>
+<section id="main footer">
+<div class="footer">
+  <p>Copyright &copy; prevpaers</p>
+</div>
+</section>
 
 </body>
 <html>

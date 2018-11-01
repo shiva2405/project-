@@ -13,6 +13,104 @@
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="js/script.js"></script>
    <title>my site</title>
+   <!-- #region Jssor Slider Begin -->
+  <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+  <script src="js/jssor.slider-23.0.0.mini.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+
+          var jssor_1_SlideshowTransitions = [
+            {$Duration:1200,$Opacity:2}
+          ];
+
+          var jssor_1_options = {
+            $AutoPlay: 1,
+            $SlideshowOptions: {
+              $Class: $JssorSlideshowRunner$,
+              $Transitions: jssor_1_SlideshowTransitions,
+              $TransitionsOrder: 1
+            },
+            $ArrowNavigatorOptions: {
+              $Class: $JssorArrowNavigator$
+            },
+            $BulletNavigatorOptions: {
+              $Class: $JssorBulletNavigator$
+            }
+          };
+
+          var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+          /*responsive code begin*/
+          /*remove responsive code if you don't want the slider scales while window resizing*/
+          function ScaleSlider() {
+              var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+              if (refSize) {
+                  refSize = Math.min(refSize,1920);
+                  jssor_1_slider.$ScaleWidth(refSize);
+              }
+              else {
+                  window.setTimeout(ScaleSlider, 30);
+              }
+          }
+          ScaleSlider();
+          $(window).bind("load", ScaleSlider);
+          $(window).bind("resize", ScaleSlider);
+          $(window).bind("orientationchange", ScaleSlider);
+          /*responsive code end*/
+      });
+  </script>
+  <style>
+      /* jssor slider bullet navigator skin 05 css */
+      /*
+      .jssorb05 div           (normal)
+      .jssorb05 div:hover     (normal mouseover)
+      .jssorb05 .av           (active)
+      .jssorb05 .av:hover     (active mouseover)
+      .jssorb05 .dn           (mousedown)
+      */
+      .jssorb05 {
+          position: absolute;
+      }
+      .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+          position: absolute;
+          /* size of bullet elment */
+          width: 16px;
+          height: 16px;
+          background: url('img/b05.png') no-repeat;
+          overflow: hidden;
+          cursor: pointer;
+      }
+      .jssorb05 div { background-position: -7px -7px; }
+      .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+      .jssorb05 .av { background-position: -67px -7px; }
+      .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+      /* jssor slider arrow navigator skin 12 css */
+      /*
+      .jssora12l                  (normal)
+      .jssora12r                  (normal)
+      .jssora12l:hover            (normal mouseover)
+      .jssora12r:hover            (normal mouseover)
+      .jssora12l.jssora12ldn      (mousedown)
+      .jssora12r.jssora12rdn      (mousedown)
+      */
+      .jssora12l, .jssora12r {
+          display: block;
+          position: absolute;
+          /* size of arrow element */
+          width: 30px;
+          height: 46px;
+          cursor: pointer;
+          background: url('img/a12.png') no-repeat;
+          overflow: hidden;
+      }
+      .jssora12l { background-position: -16px -37px; }
+      .jssora12r { background-position: -75px -37px; }
+      .jssora12l:hover { background-position: -136px -37px; }
+      .jssora12r:hover { background-position: -195px -37px; }
+      .jssora12l.jssora12ldn { background-position: -256px -37px; }
+      .jssora12r.jssora12rdn { background-position: -315px -37px; }
+  </style>
 
 </head>
 <body>
@@ -60,66 +158,163 @@ function myFunction() {
     }
 }
 </script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("myTopnav");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 <marquee id="scroller1"behavior="scroll" direction="left"scrollamount="3">
   Welcome to <span class="blinking">This awesome </span> website!
 </marquee>
+<div id="slides" style="margin-top: 60px;">
+	<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:600px;height:300px;overflow:hidden;visibility:hidden;">
 
-<div class="container">
-<marquee id="background001" behavior="scroll" direction="up"; scrollamount="3">
-<span class="blinking">Recent</span><br /><br />
-Text 02<br /><br />
-Text 03<br /><br />
-Text 04<br /><br />
-Text 05<br /><br />
-</marquee>
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:600px;height:300px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="img/02.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/04.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/05.jpg" />
+            </div>
+        </div>
 
-<iframe src="slider.html" style="width:668px;height:433px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe>
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
 
-<marquee id="background003" behavior="scroll" direction="up"; scrollamount="3">
-<span class="blinking">Notification</span><br /><br />
-Text 02<br /><br />
-Text 03<br /><br />
-Text 04<br /><br />
-Text 05<br /><br />
-</marquee>
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+
+        <span data-u="arrowleft" class="jssora12l" style="top:0px;left:0px;width:30px;height:46px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora12r" style="top:0px;right:0px;width:30px;height:46px;" data-autocenter="2"></span>
 </div>
+<div id="box1">
+	<section>
+		<img src="images/logo_brush.png">
+		<h1>Online Learning</h1>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy
+			text ever since the 1500s,
+		</p>
+	</section>
+	<section>
+		<img src="images/logo_html.png">
+		<h1>Online Learning</h1>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy
+			text ever since the 1500s,
+		</p>
+	</section>
+	<section>
+		<img src="images/logo_css.png">
+		<h1>Online Learning</h1>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy
+			text ever since the 1500s,
+		</p>
+	</section>
 
-<div>
-  <p class="content"> <section id="mainline" font-src="font/Aisling-Regular.woff">What is Lorem Ipsum?</section>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-<section id="mainline">Why do we use it?</section>
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-<section id="mainline">Where does it come from?</section>
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-
-<section id="mainline">Where can I get some?</section>
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-</p>
 </div>
-<section>
-  <div class="simple-subscription-form">
-    <form>
-      <span class="subscribe">Subscribe</span>
-      <p>Receive updates and latest news direct from our team. Simply enter your email below :</p>
-      <div class="input-group">
-        <span class="input-group-label">
-          <i class="fa fa-envelope"></i>
-        </span>
-        <input class="input-group-field" type="email" placeholder="Email"required>
-        <button class="button">Sign up now</button>
-    </form>
-  </div>
-
-
-</section>
-<section id="main footer">
-<div class="footer">
-  <p>Copyright &copy; prevpaers</p>
+<article>
+	<img src="images/teach.jpeg">
+</article>
+<aside class="available">
+	<h2>Availability</h2>
+	<br>
+	<ul class="time">
+		<li><h3>24/7</h3></li>
+		<li><h3>Mon-Sat</h3></li>
+		<li><h3>We alige methodologies for software development</h3></li>
+  </ul>
+</aside>
+<div class="clear">
+	<section>
+		<h1>our cretivity</h1>
+		<img src="images/logo_html.png">
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy
+			text ever since the 1500s,
+		</p>
+	</section>
+	<section>
+		<h1>our cretivity</h1>
+		<img src="images/logo_css.png">
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy
+			text ever since the 1500s,
+		</p>
+	</section>
+	<section>
+		<h1>our cretivity</h1>
+		<img src="images/logo_brush.png">
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy
+			text ever since the 1500s,
+		</p>
+	</section>
+</div>
+<div class="clear">
+	<footer>
+		<section class="sclimg">
+      <section id="newsletter">
+          <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <form>
+              <input type="email" placeholder="Enter Email...">
+              <button type="submit" class="button_1">Subscribe</button>
+            </form>
+          </div>
+        </section>
+		</section>
+		<section>
+			<h3>contact</h3>
+			<p><b>+9180-8488-7530</b></p>
+			<p>1-RA-12, Udaipur</p>
+			<p>Rajasthan India</p>
+		</section>
+		<section>
+			<h3>connect with us!</h3>
+			<ul class="social">
+				<li><a href="#"><img src="images/logo.png"></a></li>
+				<li><a href="#"><img src="images/logo.png"></a></li>
+				<li><a href="#"><img src="images/logo.png"></a></li>
+				<li><a href="#"><img src="images/logo.png"></a></li>
+			</ul>
+		</section>
+	</footer>
+</div>
+<div class="clear">
+	<footer class="second">
+    <div class="footer">
+      <p>Copyright &copy; prevpaers</p>
+    </div>
+	</footer>
 </div>
 </section>
 

@@ -315,23 +315,6 @@ div.recent {
   display: flex;
   flex-wrap: wrap;
 }
-#background001 ,#background003{
-border: 10px solid black ;
-background-color: rgba(0,0,0,0.5);
-text-align: center;
-font-size: 125%;
-color: yellow;
-height: 300px;
-width: 300px;
-margin: 200px 20px 10px;
-border-radius: 66px 64px 0px 20px;
--moz-border-radius: 66px 64px 0px 20px;
--webkit-border-radius: 66px 64px 0px 20px;
-border: 8px double #1a071a;
--webkit-box-shadow: 0px 44px 77px -14px rgba(138,127,138,1);
--moz-box-shadow: 0px 44px 77px -14px rgba(138,127,138,1);
-box-shadow: 0px 44px 77px -14px rgba(138,127,138,1);
-}
 #scroller1 {
   text-decoration-color: red;
   font-size: 50px;
@@ -427,7 +410,7 @@ box-shadow: 0px 44px 77px -14px rgba(138,127,138,1);
   color: red;
   font-display: fallback;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1300px) {
   .main-content-header{
     display: none;
   }
